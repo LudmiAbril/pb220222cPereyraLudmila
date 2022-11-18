@@ -65,6 +65,30 @@ public class Prueba {
 			System.out.println(e.getMessage());
 		}
 		
+		//Creo usuarios empleado de la Central y cliente de la central
+		
+		Usuario empleado = new Empleado("richard", 12);
+		Usuario cliente=new Cliente("lucia",23);
+		
+		// le agrego un gato al cliente y hago que el cliente lo registre en la central
+		Gato gatoDelCliente=new Persa("pipi");
+		((Cliente)cliente).agregarGato(gatoDelCliente);
+		try {
+//			central.agregarGatoAlaCaja(gatoDelCliente);
+			((Cliente)cliente).registrarGatoEnLaCentral(gatoDelCliente, central);
+			System.out.println("se registro el gato en la central, ahora mismo se encuentra en la caja");
+		} catch (GatoYaRegistradoException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		// el empleado puede alimentar a los gatos buscandolos por su nombre
+		try {
+			((Empleado)empleado).alimentarGato(gatoDelCliente.getNombre(), central);
+			System.out.println("se alimento a " + gatoDelCliente.getNombre());
+		} catch (NoSeEncontroElGatoConEseNombreException e) {
+			System.out.println(e.getMessage());
+		}
+		
 		
 		
 		
