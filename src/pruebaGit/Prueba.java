@@ -25,7 +25,7 @@ public class Prueba {
 		CentralGatuna central=new CentralGatuna("Michigan");
 		System.out.println("se creo la central " +central.getNombreCentral());
 		
-		// agregar gatos de distintos tipo a una caja
+		// agregar gatos de distintos tipo a una caja y chequeao que no se repitan
 		Gato gato1=new Gato("pelusa");
 		Gato gato2=new Persa("persita");
 		Gato gato3= new MaineCoon("mishi");
@@ -33,9 +33,19 @@ public class Prueba {
 		central.agregarGatoAlaCaja(gato1);
 		central.agregarGatoAlaCaja(gato2);
 		central.agregarGatoAlaCaja(gato3);
+		central.agregarGatoAlaCaja(gato3);
 		System.out.println("se agregaron " + central.getCantidadDeGatos() + " gatos a la caja");
 		
-		//
+		// busco un gato de un tipo
+		try {
+			Gato prs=central.buscarGatoPersa();
+			System.out.println("el gato persa es : " + prs.getNombre());
+		} catch (NoHayGatosPersasEnLaCajaException e) {
+			
+			System.out.println(e.getMessage());
+		}
+		
+		
 		
 
 	}

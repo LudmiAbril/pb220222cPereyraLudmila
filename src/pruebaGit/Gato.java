@@ -8,9 +8,12 @@ public class Gato extends Animal {
 	}
 
 	@Override
-	void hablar() {
+	 public void hablar() {
 		System.out.println("miauu");
 
 	}
+	
+	
+	
 
 }
