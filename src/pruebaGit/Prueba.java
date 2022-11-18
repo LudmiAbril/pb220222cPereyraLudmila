@@ -89,6 +89,14 @@ public class Prueba {
 			System.out.println(e.getMessage());
 		}
 		
+		//el usuario puede dejar un review en la central y retirarlo
+		try {
+			((Empleado)empleado).entregarGatoAlCliente(gatoDelCliente.getNombre(), central, (Cliente) cliente);
+			System.out.println("se entrego el gato al cliente " + cliente.getNombre());
+		} catch (NoSeEncontroElGatoConEseNombreException e) {
+			System.out.println(e.getMessage());
+		}
+		
 		
 		
 		

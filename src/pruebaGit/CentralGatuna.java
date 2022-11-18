@@ -63,5 +63,9 @@ public Gato buscarGatoPorNombre(String nombre) throws NoSeEncontroElGatoConEseNo
 	
 }
 
+public void entregarGato(Gato gato,Cliente cliente) {
+	this.cajaDeGatos.remove(gato);
+	cliente.agregarGato(gato);
+}
 
 }
