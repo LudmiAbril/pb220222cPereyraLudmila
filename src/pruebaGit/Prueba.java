@@ -20,6 +20,10 @@ public class Prueba {
 		System.out.println("el gato 2 dice: ");((Persa)gato2).saltar();
 		System.out.println("el gato 3 dice:");gato3.saltar();
 		
+		//central gatuna
+		
+		CentralGatuna central=new CentralGatuna();
+		
 
 	}
 
