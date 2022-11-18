@@ -54,5 +54,14 @@ public Gato buscarGatoMaineCoon() throws NoHayGatosMaineCoonEnLaCajaException {
 	
 }
 
+public Gato buscarGatoPorNombre(String nombre) throws NoSeEncontroElGatoConEseNombreException {
+	for(Gato g :cajaDeGatos) {
+		if(g.getNombre().equals(nombre)) {
+			return g;
+		}
+	} throw new NoSeEncontroElGatoConEseNombreException("no se encontro el gato con ese nombre");
+	
+}
+
 
 }

@@ -37,6 +37,7 @@ public class Prueba {
 		System.out.println("se agregaron " + central.getCantidadDeGatos() + " gatos a la caja");
 		
 		// busco un gato de un tipo
+		
 		Gato prs;
 		try {
 			prs=central.buscarGatoPersa();
@@ -52,6 +53,15 @@ public class Prueba {
 			maine = central.buscarGatoMaineCoon();
 			System.out.println("el gato maine coon es : " + maine.getNombre());
 		} catch (NoHayGatosMaineCoonEnLaCajaException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		// busco un gato por nombre
+		
+		try {
+			Gato gatoBuscado=central.buscarGatoPorNombre("mishi");
+			System.out.println("se encontro a " + gatoBuscado.getNombre());
+		} catch (NoSeEncontroElGatoConEseNombreException e) {
 			System.out.println(e.getMessage());
 		}
 		
