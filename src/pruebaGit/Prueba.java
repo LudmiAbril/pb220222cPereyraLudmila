@@ -89,7 +89,7 @@ public class Prueba {
 			System.out.println(e.getMessage());
 		}
 		
-		//el usuario puede dejar un review en la central y retirarlo
+		//el empleado entrega el gato al cliente
 		try {
 			((Empleado)empleado).entregarGatoAlCliente(gatoDelCliente.getNombre(), central, (Cliente) cliente);
 			System.out.println("se entrego el gato al cliente " + cliente.getNombre());
