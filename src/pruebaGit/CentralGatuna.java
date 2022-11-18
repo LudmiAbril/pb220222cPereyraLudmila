@@ -12,6 +12,10 @@ public CentralGatuna(String nombre) {
 	this.cajaDeGatos=new HashSet<>();
 }
 
+public void agregarGatoAlaCaja(Animal gato) {
+	cajaDeGatos.add(gato);
+}
+
 public Integer getCantidadDeGatos() {
 	return cajaDeGatos.size();
 }
