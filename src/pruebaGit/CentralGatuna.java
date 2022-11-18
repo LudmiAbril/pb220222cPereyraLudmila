@@ -45,5 +45,14 @@ public Gato buscarGatoPersa() throws NoHayGatosPersasEnLaCajaException {
 	
 }
 
+public Gato buscarGatoMaineCoon() throws NoHayGatosMaineCoonEnLaCajaException {
+	for(Gato g : cajaDeGatos) {
+		if(g instanceof MaineCoon) {
+			return g;
+		}
+	} throw new NoHayGatosMaineCoonEnLaCajaException("no hay gatitos maine coon en la caja aun");
+	
+}
+
 
 }

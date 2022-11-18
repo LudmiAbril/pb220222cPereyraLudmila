@@ -37,13 +37,24 @@ public class Prueba {
 		System.out.println("se agregaron " + central.getCantidadDeGatos() + " gatos a la caja");
 		
 		// busco un gato de un tipo
+		Gato prs;
 		try {
-			Gato prs=central.buscarGatoPersa();
+			prs=central.buscarGatoPersa();
 			System.out.println("el gato persa es : " + prs.getNombre());
 		} catch (NoHayGatosPersasEnLaCajaException e) {
 			
 			System.out.println(e.getMessage());
 		}
+		
+		
+		Gato maine;
+		try {
+			maine = central.buscarGatoMaineCoon();
+			System.out.println("el gato maine coon es : " + maine.getNombre());
+		} catch (NoHayGatosMaineCoonEnLaCajaException e) {
+			System.out.println(e.getMessage());
+		}
+		
 		
 		
 		
