@@ -1,15 +1,35 @@
 package pruebaGit;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class CentralGatuna {
 private String nombreCentral;
 private Set<Gato> cajaDeGatos;
+private Map<String,String>reviews;
 
 public CentralGatuna(String nombre) {
 	this.nombreCentral=nombre;
 	this.cajaDeGatos=new HashSet<>();
+    this.reviews=new TreeMap<String,String>();
+}
+
+
+
+public Map<String, String> getReviews() {
+	return reviews;
+}
+
+
+
+public void setReviews(Map<String, String> reviews) {
+	this.reviews = reviews;
+}
+
+public void registrarReview(String nombreCliente,String review) {
+	
 }
 
 public void agregarGatoAlaCaja(Gato gato) {
@@ -66,6 +86,28 @@ public Gato buscarGatoPorNombre(String nombre) throws NoSeEncontroElGatoConEseNo
 public void entregarGato(Gato gato,Cliente cliente) {
 	this.cajaDeGatos.remove(gato);
 	cliente.agregarGato(gato);
+}
+
+
+
+public void agregarReview(String nombreCliente, String review) throws YaSeEnvioEstaReviewException {
+	for(Map.Entry<String, String> entry : this.reviews.entrySet()) {
+		if(entry.getValue().equals(review)) {
+			throw new YaSeEnvioEstaReviewException("esta review ya se envio");
+		}
+	} this.reviews.put(nombreCliente, review);
+
+}
+
+
+
+public String verReviews() {
+	String reviews="REVIEWS DE LA CENTRAL";
+	for(Map.Entry<String, String> entry : this.reviews.entrySet()) {
+		
+		reviews+="\n"+entry.getKey()+": "+entry.getValue();
+	} return reviews;
+	
 }
 
 }

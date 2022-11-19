@@ -97,6 +97,27 @@ public class Prueba {
 			System.out.println(e.getMessage());
 		}
 		
+		// el cliente puede dejar una review a la central y se guarda en un mapa
+		try {
+			((Cliente)cliente).enviarReview(cliente.getNombre(), "atendieron muy bien a mi michi", central);
+//			((Cliente)cliente).enviarReview(cliente.getNombre(), "atendienron muy bien a mi michi", central);
+			System.out.println("se envio la review");
+		} catch (YaSeEnvioEstaReviewException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		Cliente cliente2=new Cliente("paula", 23);
+		try {
+			cliente2.enviarReview(cliente2.getNombre(), "mi gato comio bien", central);
+			System.out.println("se envio la review");
+		} catch (YaSeEnvioEstaReviewException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		
+		// vemos las reviews que hay
+		
+		System.out.println(central.verReviews());
 		
 		
 		

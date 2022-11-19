@@ -1,6 +1,8 @@
 package pruebaGit;
 
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class Cliente extends Usuario implements iCliente {
 	private ArrayList<Gato> GatosDelCliente;
@@ -32,4 +34,12 @@ public class Cliente extends Usuario implements iCliente {
 		this.GatosDelCliente.add(gato);
 	}
 
+	@Override
+	public void enviarReview(String nombreCliente, String review, CentralGatuna central)
+			throws YaSeEnvioEstaReviewException {
+		
+		central.agregarReview(nombreCliente,review);
+	}
+
+	
 }
